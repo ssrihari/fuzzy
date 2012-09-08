@@ -5,14 +5,13 @@
 bool fuzzy(char *key, char *string)
 {
   char *remaining_string = string;
-  if ( strlen(remaining_string) == 0 || strlen(key) == 0 )
+  if ( strlen(key) == 0 || strlen(remaining_string) == 0 )
       return true;
 
   if ( (remaining_string = strchr(string, key[0])) != NULL )
       fuzzy( key+1, remaining_string+1 );
   else
     return false;
-
 }
 
 main()
