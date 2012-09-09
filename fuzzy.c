@@ -5,18 +5,23 @@
 bool fuzzy_search(char *key, char *string)
 {
   char *remaining_string = string;
-  if ( strlen(key) == 0 || strlen(remaining_string) == 0 )
-      return true;
+  if ( strlen(key) == 0)
+    return true;
 
   if ( (remaining_string = strchr(string, key[0])) != NULL )
-      fuzzy_search( key+1, remaining_string+1 );
+    {
+      // key++; remaining_string++;
+      // printf("Key:%s\n", key );
+      // printf("Remaining_string:%s\n", remaining_string );
+      return fuzzy_search( key+1, remaining_string+1 );
+    }
   else
     return false;
 }
 
 main()
 {
-  char string[200] = "hollo i am srihari and i am trying out fuzzy search for tito";
+  char string[200] = "quit";
 
   char *key;
   bool status;
