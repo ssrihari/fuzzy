@@ -4,7 +4,7 @@
 
 bool fuzzy_search(char *key, char *string)
 {
-  char *remaining_string = string;
+  char *remaining_string;
   if ( strlen(key) == 0)
     return true;
 
