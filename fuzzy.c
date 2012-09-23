@@ -9,12 +9,7 @@ bool fuzzy_search(char *key, char *string)
     return true;
 
   if ( (remaining_string = strchr(string, key[0])) != NULL )
-    {
-      // key++; remaining_string++;
-      // printf("Key:%s\n", key );
-      // printf("Remaining_string:%s\n", remaining_string );
       return fuzzy_search( key+1, remaining_string+1 );
-    }
   else
     return false;
 }
