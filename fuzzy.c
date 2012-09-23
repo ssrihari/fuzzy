@@ -16,13 +16,20 @@ bool fuzzy_search(char *key, char *string)
 
 main()
 {
-  char string[200] = "quit";
+  char string[200] = "apply canvas";
 
   char *key;
   bool status;
 
-  printf("%s", "Enter something:");
+  printf("%s", "Key:");
   scanf("%s", key);
+
   status = fuzzy_search(key, string);
-  printf("The fuzzy string match returned %d\n", status);
+
+  printf("The fuzzy string match ");
+  if(status)
+    printf("succeeded.\n");
+  else
+    printf("failed.\n");
+
 }
