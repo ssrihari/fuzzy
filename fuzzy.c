@@ -16,7 +16,7 @@ bool fuzzy_search(char *key, char *string)
 
 main()
 {
-  char string[200] = "apply canvas";
+  char string[200] = "apply ceanvas";
 
   char *key;
   bool status;
